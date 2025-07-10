@@ -58,6 +58,37 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Experience Section */
+.experience-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px; /* Adds space below the card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.experience-card h3 {
+    margin-top: 0;
+    color: #007BFF;
+}
+
+.experience-date {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.experience-card ul {
+    padding-left: 20px; /* Indents the bullet points */
+    margin: 0;
+}
+
+.experience-card ul li {
+    margin-bottom: 10px; /* Adds space between bullet points */
+}
+
+
 /* Projects Section */
 #projects .project-grid {
     display: grid;
