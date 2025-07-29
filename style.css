@@ -13,7 +13,7 @@
     --toggle-icon-color: #333;
 }
 
-[data-theme="dark"] {
+html[data-theme="dark"] {
     --primary-color: #009cff;
     --primary-hover-color: #4dbbff;
     --background-color: #121212;
@@ -45,7 +45,7 @@ body {
 }
 
 /* Theme Toggle Button */
-.theme-toggle {
+#theme-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -59,26 +59,28 @@ body {
     align-items: center;
     cursor: pointer;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
 }
-
-.theme-toggle svg {
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+#theme-toggle svg {
     color: var(--toggle-icon-color);
     transition: color 0.3s;
 }
-
-.sun-icon {
+/* By default, show moon icon (for light mode) */
+#theme-toggle .sun-icon {
     display: none;
 }
-.moon-icon {
+#theme-toggle .moon-icon {
     display: block;
 }
-
-[data-theme="dark"] .sun-icon {
+/* When in dark mode, show sun icon */
+html[data-theme="dark"] #theme-toggle .sun-icon {
     display: block;
 }
-[data-theme="dark"] .moon-icon {
+html[data-theme="dark"] #theme-toggle .moon-icon {
     display: none;
 }
 
