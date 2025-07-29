@@ -23,14 +23,14 @@
     </header>
 
     <main class="container">
-        <section id="about">
+        <section id="about" class="fade-in">
             <h2>About Me</h2>
             <p>
                 I am an ML Engineer specializing in the end-to-end development and deployment of computer vision systems. I have a proven ability to architect robust AI/ML pipelines, containerize models for scalable inference via APIs, and integrate ethical considerations and explainability into the core of a project. I am passionate about building responsible and transparent AI solutions and am actively seeking an internship or full-time ML Engineer role where I can contribute to building transparent and impactful solutions.
             </p>
         </section>
 
-        <section id="experience">
+        <section id="experience" class="fade-in">
             <h2>Professional Experience</h2>
             <div class="experience-card">
                 <h3>ML Engineer Intern | Utopia Optovision Pvt. Ltd.</h3>
@@ -43,37 +43,56 @@
             </div>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="fade-in">
             <h2>Projects</h2>
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card fade-in">
                     <h3>Deepfake Detection</h3>
                     <p>Engineered a deepfake detection pipeline with PyTorch, achieving 91.2% accuracy. Deployed a scalable FastAPI and Docker-based REST API for real-time inference and integrated Grad-CAM for model explainability, enhancing transparency by visualizing influential facial regions.</p>
+                    <div class="project-tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">XAI</span>
+                    </div>
                     <a href="https://github.com/Aaryan2304/deepfake-detection" target="_blank">View on GitHub</a>
                 </div>
-                <div class="project-card">
+                <div class="project-card fade-in">
                     <h3>Video Anomaly Detection System</h3>
                     <p>Developed a production-grade anomaly detection system using a PyTorch-based autoencoder, attaining 92.5% precision on the UCSD Ped2 dataset. Architected a scalable FastAPI and Docker-based REST API, enabling real-time video analysis with a processing speed of ~0.2 seconds per clip.</p>
-                    <a href="https://github.com/Aaryan2304/cctv-video-anomaly-detection" target="_blank">View on GitHub</a>
+                     <div class="project-tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">MLOps</span>
+                        <span class="tag">Autoencoder</span>
+                    </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card fade-in">
                     <h3>AI-Powered Visual Search Engine</h3>
                     <p>Architected a visual search engine for over 100,000 fashion images, delivering results with under 100ms latency. Engineered a full-stack ML pipeline using CLIP and FAISS, optimized with FastAPI and a Streamlit UI, and achieved over 60% memory efficiency with a robust testing framework ensuring 100% code reliability.</p>
-                    <a href="https://github.com/Aaryan2304/visual-search-engine" target="_blank">View on GitHub</a>
+                     <div class="project-tags">
+                        <span class="tag">CLIP</span>
+                        <span class="tag">FAISS</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">PyTorch</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
+        <section id="skills" class="fade-in">
             <h2>Technical Skills</h2>
              <ul>
                 <li><strong>Programming Languages:</strong> Python, MySQL</li>
                 <li><strong>Frameworks & Libraries:</strong> TensorFlow, PyTorch, NumPy, Pandas, Scikit-learn, Matplotlib</li>
                 <li><strong>Specializations:</strong> Computer Vision, Natural Language Processing (NLP)</li>
-                <li><strong>Tools & Platforms:</strong> LLMS, VLM, OCR, Docker, Roboflow, CVAT, Jupyter, Git, GCP, FastAPI, Object Detection, OpenCV, Fine-tuning, Segmentation, SLAM, Reinforcement Learning, 3D Vision, Explainable AI (XAI), Generative AI, MLOps, Streamlit, Azure</li>
+                <li><strong>Tools & Platforms:</strong> LLMs, VLM, OCR, Docker, Roboflow, CVAT, Jupyter, Git, GCP, FastAPI, Object Detection, OpenCV, Fine-tuning, Segmentation, SLAM, Reinforcement Learning, 3D Vision, Explainable AI (XAI), Generative AI, MLOps, Streamlit, Azure</li>
             </ul>
         </section>
-         <section id="education">
+         <section id="education" class="fade-in">
             <h2>Education</h2>
             <p><strong>MIT World Peace University (MIT-WPU) - Pune, India</strong></p>
             <p>B.Tech, Electronics and Communication Engineering - AI/ML (Jun 2021 - Jun 2025)</p>
@@ -82,8 +101,28 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Aaryan Kurade.</p>
+            <p>© 2025 Aaryan Kurade. Website created with guidance from Google's AI.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            fadeInElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
