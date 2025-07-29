@@ -64,7 +64,7 @@ h2 {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 25px;
-    margin-bottom: 20px; /* Adds space below the card */
+    margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
@@ -80,12 +80,12 @@ h2 {
 }
 
 .experience-card ul {
-    padding-left: 20px; /* Indents the bullet points */
+    padding-left: 20px;
     margin: 0;
 }
 
 .experience-card ul li {
-    margin-bottom: 10px; /* Adds space between bullet points */
+    margin-bottom: 10px;
 }
 
 
@@ -103,7 +103,10 @@ h2 {
     padding: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .project-card:hover {
     transform: translateY(-5px);
@@ -115,9 +118,31 @@ h2 {
     color: #007BFF;
 }
 
+.project-card p {
+    flex-grow: 1; /* Ensures paragraph takes available space */
+}
+
+.project-tags {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background-color: #e9f5ff;
+    color: #007BFF;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+
 .project-card a {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: auto; /* Pushes the link to the bottom */
     text-decoration: none;
     color: #007BFF;
     font-weight: 600;
@@ -144,4 +169,16 @@ footer {
     margin-top: 40px;
     background-color: #333;
     color: #f9f9f9;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
