@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaryan Kurade | ML Engineer</title>
+    <title>Aaryan Kurade | Machine Learning Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <header>
@@ -18,6 +19,12 @@
                 <a href="https://www.linkedin.com/in/aaryan-kurade" target="_blank">LinkedIn</a>
                 <a href="https://github.com/Aaryan2304" target="_blank">GitHub</a>
                 <a href="https://medium.com/@aaryankurade0101" target="_blank">Medium</a>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
             </nav>
         </div>
     </header>
@@ -33,7 +40,7 @@
         <section id="experience" class="fade-in">
             <h2>Professional Experience</h2>
             <div class="experience-card">
-                <h3>ML Engineer Intern | Utopia Optovision Pvt. Ltd.</h3>
+                <h3>Machine Learning Engineer - Intern | Utopia Optovision Pvt. Ltd.</h3>
                 <p class="experience-date">Jan 2024 - Jan 2025</p>
                 <ul>
                     <li>Engineered and Deployed an automated text extraction system using YOLO and PaddleOCR, demonstrating a strong practical understanding of AI/ML concepts and rapid prototyping techniques with Python.</li>
@@ -68,6 +75,7 @@
                         <span class="tag">MLOps</span>
                         <span class="tag">Autoencoder</span>
                     </div>
+                    <a href="https://github.com/Aaryan2304/cctv-video-anomaly-detection" target="_blank">View on GitHub</a>
                 </div>
                 <div class="project-card fade-in">
                     <h3>AI-Powered Visual Search Engine</h3>
@@ -79,6 +87,7 @@
                         <span class="tag">Streamlit</span>
                         <span class="tag">PyTorch</span>
                     </div>
+                    <a href="https://github.com/Aaryan2304/visual-search-engine" target="_blank">View on GitHub</a>
                 </div>
             </div>
         </section>
@@ -101,13 +110,13 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Aaryan Kurade. Website created with guidance from Google's AI.</p>
+            <p>© 2025 Aaryan Kurade.</p>
         </div>
     </footer>
     <script>
+        // Fade-in animation logic
         document.addEventListener("DOMContentLoaded", function() {
             const fadeInElements = document.querySelectorAll('.fade-in');
-
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -115,14 +124,34 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.1
-            });
-
+            }, { threshold: 0.1 });
             fadeInElements.forEach(element => {
                 observer.observe(element);
             });
         });
+
+        // Dark/Light mode toggle logic
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
     </script>
 </body>
 </html>
