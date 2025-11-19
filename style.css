@@ -186,6 +186,11 @@ nav a:hover::before {
     background: var(--bg-card-solid);
 }
 
+/* Fix: Allow About Me text to fill the entire card width */
+.about-card p {
+    max-width: 100%;
+}
+
 .tech-card:hover {
     border-color: var(--border-glow);
     box-shadow: var(--glow-shadow);
