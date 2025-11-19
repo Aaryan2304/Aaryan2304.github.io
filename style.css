@@ -1,264 +1,329 @@
-/* General & Theming */
 :root {
-    --primary-color: #007BFF;
-    --primary-hover-color: #0056b3;
-    --background-color: #f9f9f9;
-    --card-background-color: #ffffff;
-    --text-color: #333;
-    --border-color: #e0e0e0;
-    --header-background-color: #ffffff;
-    --footer-background-color: #333;
-    --footer-text-color: #f9f9f9;
-    --skill-background-color: #e9f5ff;
-    --toggle-icon-color: #333;
+    /* Light Theme Variables */
+    --primary-color: #0284c7; /* A more refined blue (Sky 600) */
+    --primary-hover: #0369a1;
+    --background-bg: #f8fafc; /* Slate 50 */
+    --card-bg: rgba(255, 255, 255, 0.75); /* Translucent for Glassmorphism */
+    --text-main: #0f172a; /* Slate 900 */
+    --text-muted: #64748b; /* Slate 500 */
+    --border-color: rgba(226, 232, 240, 0.8);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --tag-bg: #e0f2fe;
+    --tag-text: #0284c7;
 }
 
 html[data-theme="dark"] {
-    --primary-color: #009cff;
-    --primary-hover-color: #4dbbff;
-    --background-color: #121212;
-    --card-background-color: #1e1e1e;
-    --text-color: #e0e0e0;
-    --border-color: #333;
-    --header-background-color: #1e1e1e;
-    --footer-background-color: #1e1e1e;
-    --footer-text-color: #e0e0e0;
-    --skill-background-color: #2a3a4a;
-    --toggle-icon-color: #e0e0e0;
+    /* Dark Theme Variables */
+    --primary-color: #38bdf8; /* Sky 400 */
+    --primary-hover: #7dd3fc;
+    --background-bg: #0f172a; /* Slate 900 */
+    --card-bg: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity */
+    --text-main: #f1f5f9; /* Slate 100 */
+    --text-muted: #94a3b8; /* Slate 400 */
+    --border-color: rgba(51, 65, 85, 0.8);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --nav-bg: rgba(15, 23, 42, 0.8);
+    --tag-bg: rgba(56, 189, 248, 0.15);
+    --tag-text: #38bdf8;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+    background-color: var(--background-bg);
+    color: var(--text-main);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
 }
 
+/* 3D Background */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none; /* Allow clicking through the canvas */
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+/* Layout Utilities */
 .container {
-    width: 80%;
-    max-width: 960px;
+    width: 90%;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 0 15px;
 }
 
-/* Theme Toggle Button */
+.section-block {
+    margin-bottom: 5rem;
+    padding-top: 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--text-main);
+    margin-top: 0;
+}
+
+h1 { font-size: 3.5rem; font-weight: 700; letter-spacing: -1px; line-height: 1.2; }
+h2 { 
+    font-size: 2rem; 
+    font-weight: 600; 
+    position: relative; 
+    margin-bottom: 2.5rem; 
+    display: inline-block;
+}
+
+/* Subtle underline for headings */
+h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: var(--primary-color);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+p { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* Header */
+header {
+    padding: 6rem 0 4rem 0; /* Hero-like padding */
+    text-align: center;
+}
+
+.header-content .subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-top: -10px;
+    margin-bottom: 2rem;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    color: #fff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Theme Toggle */
 #theme-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    background: var(--card-background-color);
+    top: 24px;
+    right: 24px;
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    color: var(--text-main);
+    box-shadow: var(--shadow-sm);
 }
+
 #theme-toggle:hover {
-    transform: scale(1.1);
-}
-#theme-toggle svg {
-    color: var(--toggle-icon-color);
-    transition: color 0.3s;
-}
-/* By default, show moon icon (for light mode) */
-#theme-toggle .sun-icon {
-    display: none;
-}
-#theme-toggle .moon-icon {
-    display: block;
-}
-/* When in dark mode, show sun icon */
-html[data-theme="dark"] #theme-toggle .sun-icon {
-    display: block;
-}
-html[data-theme="dark"] #theme-toggle .moon-icon {
-    display: none;
+    transform: rotate(15deg);
+    background: var(--background-bg);
+    box-shadow: var(--shadow-md);
 }
 
+html[data-theme="light"] .moon-icon { display: block; }
+html[data-theme="light"] .sun-icon { display: none; }
+html[data-theme="dark"] .moon-icon { display: none; }
+html[data-theme="dark"] .sun-icon { display: block; }
 
-/* Header */
-header {
-    background-color: var(--header-background-color);
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-    text-align: center;
-    transition: background-color 0.3s, border-color 0.3s;
+/* Glassmorphism Cards */
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(12px); /* The glass effect */
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-header nav {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-header nav a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-    margin: 0 10px;
-}
-
-header nav a:hover {
-    color: var(--primary-hover-color);
-}
-
-
-/* Main Content */
-main {
-    padding: 20px 0;
-}
-
-h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+.glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
 }
 
 /* Experience Section */
-.experience-card {
-    background: var(--card-background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s, border-color 0.3s;
+.card-grid {
+    display: grid;
+    gap: 2rem;
 }
 
-.experience-card h3 {
-    margin-top: 0;
-    color: var(--primary-color);
+.experience-card .card-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
 }
 
-.experience-date {
-    font-style: italic;
-    color: #888;
-}
+.experience-card h3 { margin-bottom: 0.2rem; font-size: 1.25rem; }
+.experience-card .company { font-weight: 600; color: var(--primary-color); }
+.experience-card .experience-date { font-size: 0.9rem; margin-bottom: 1rem; }
 
 .experience-card ul {
-    padding-left: 20px;
+    padding-left: 1.2rem;
     margin: 0;
+    color: var(--text-muted);
 }
 
-.experience-card ul li {
-    margin-bottom: 10px;
-}
-
+.experience-card li { margin-bottom: 0.5rem; }
 
 /* Projects Section */
-#projects .project-grid {
+.project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
 .project-card {
-    background: var(--card-background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
+.project-content { flex: 1; }
 
 .project-card h3 {
-    margin-top: 0;
-    color: var(--primary-color);
-}
-
-.project-card p {
-    flex-grow: 1; 
+    color: var(--text-main);
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
 }
 
 .project-tags {
-    margin-top: 15px;
-    margin-bottom: 15px;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .tag {
-    background-color: var(--skill-background-color);
-    color: var(--primary-color);
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.8rem;
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
     font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
-
-.project-card a {
+.project-link {
     display: inline-block;
-    margin-top: auto; 
-    text-decoration: none;
+    margin-top: auto;
     color: var(--primary-color);
     font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-link:hover {
+    gap: 8px; /* Arrow animation */
+    color: var(--primary-hover);
 }
 
 /* Skills Section */
-#skills ul {
-    list-style-type: none;
+.skills-container ul {
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-#skills li {
-    background-color: var(--skill-background-color);
-    padding: 10px 15px;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    border-left: 4px solid var(--primary-color);
-    transition: background-color 0.3s, border-color 0.3s;
+.skills-container li {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+}
+
+.skills-container strong {
+    color: var(--text-main);
+    margin-right: 8px;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    background-color: var(--footer-background-color);
-    color: var(--footer-text-color);
-    transition: background-color 0.3s, color 0.3s;
+    padding: 4rem 0 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
-/* Fade-in Animation */
+/* Animations */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    
+    header { padding: 4rem 0 2rem; }
+    
+    .container { width: 92%; }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-card {
+        padding: 1.5rem;
+    }
 }
