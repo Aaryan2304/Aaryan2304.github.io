@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +7,25 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
 
-    <button id="theme-toggle" title="Toggle theme">
+    <div id="canvas-container"></div>
+
+    <button id="theme-toggle" title="Toggle theme" aria-label="Toggle dark mode">
         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
         <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
     </button>
     
     <header>
         <div class="container">
-            <h1>Aaryan Kurade</h1>
+            <div class="header-content">
+                <h1>Aaryan Kurade</h1>
+                <p class="subtitle">Machine Learning Engineer</p>
+            </div>
             <nav>
                 <a href="mailto:aaryankurade27@gmail.com">Email</a>
                 <a href="https://www.linkedin.com/in/aaryan-kurade" target="_blank">LinkedIn</a>
@@ -30,140 +36,287 @@
     </header>
 
     <main class="container">
-        <section id="about" class="fade-in">
+        <section id="about" class="fade-in section-block">
             <h2>About Me</h2>
-            <p>
-                I am an ML Engineer specializing in the end-to-end development and deployment of computer vision systems. I have a proven ability to architect robust AI/ML pipelines, containerize models for scalable inference via APIs, and integrate ethical considerations and explainability into the core of a project. I am passionate about building responsible and transparent AI solutions and am actively seeking an internship or full-time ML Engineer role where I can contribute to building transparent and impactful solutions.
+            <p class="lead-text">
+                I am an ML Engineer specializing in the end-to-end development and deployment of computer vision systems. I have a proven ability to architect robust AI/ML pipelines, containerize models for scalable inference via APIs, and integrate ethical considerations and explainability into the core of a project. I am passionate about building responsible and transparent AI solutions.
             </p>
         </section>
 
-        <section id="experience" class="fade-in">
+        <section id="experience" class="fade-in section-block">
             <h2>Professional Experience</h2>
-            <div class="experience-card">
-                <h3>Machine Learning Engineer - Intern | Utopia Optovision Pvt. Ltd.</h3>
-                <p class="experience-date">Jan 2024 - Jan 2025</p>
-                <ul>
-                    <li>Engineered and Deployed an automated text extraction system using YOLO and PaddleOCR, demonstrating a strong practical understanding of AI/ML concepts and rapid prototyping techniques with Python.</li>
-                    <li>Applied advanced computer vision approaches by leveraging OCR and object detection, resulting in a 15% improvement in model accuracy for a key product feature.</li>
-                    <li>Streamlined data processing workflows by enhancing technical documentation and automation scripts, reducing manual effort by an estimated 20% and improving team efficiency.</li>
-                </ul>
-            </div>
-            <div class="experience-card">
-                <h3>Software Engineer | Arakoo.ai </h3>
-                <p class="experience-date">Aug 2025 - Nov 2025</p>
-                <ul>
-                    <li>Worked on voice models for tasks like Speach Recognition, Speaker Diarization, Voice Activity Detection and ASR.</li>
-                </ul>
+            <div class="card-grid">
+                <div class="experience-card glass-card">
+                    <div class="card-header">
+                        <h3>Machine Learning Engineer - Intern</h3>
+                        <span class="company">Utopia Optovision Pvt. Ltd.</span>
+                    </div>
+                    <p class="experience-date">Jan 2024 - Jan 2025</p>
+                    <ul>
+                        <li>Engineered and Deployed an automated text extraction system using YOLO and PaddleOCR, demonstrating a strong practical understanding of AI/ML concepts.</li>
+                        <li>Applied advanced computer vision approaches by leveraging OCR and object detection, resulting in a 15% improvement in model accuracy.</li>
+                        <li>Streamlined data processing workflows by enhancing technical documentation and automation scripts, reducing manual effort by 20%.</li>
+                    </ul>
+                </div>
+                <div class="experience-card glass-card">
+                    <div class="card-header">
+                        <h3>Software Engineer</h3>
+                        <span class="company">Arakoo.ai</span>
+                    </div>
+                    <p class="experience-date">Aug 2025 - Nov 2025</p>
+                    <ul>
+                        <li>Worked on voice models for tasks like Speech Recognition, Speaker Diarization, Voice Activity Detection and ASR.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <section id="projects" class="fade-in">
-            <h2>Projects</h2>
+        <section id="projects" class="fade-in section-block">
+            <h2>Featured Projects</h2>
             <div class="project-grid">
-                <div class="project-card fade-in">
-                    <h3>Deepfake Detection</h3>
-                    <p>Engineered a deepfake detection pipeline with PyTorch, achieving 91.2% accuracy. Deployed a scalable FastAPI and Docker-based REST API for real-time inference and integrated Grad-CAM for model explainability, enhancing transparency by visualizing influential facial regions.</p>
-                    <div class="project-tags">
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">OpenCV</span>
-                        <span class="tag">XAI</span>
+                <div class="project-card glass-card fade-in">
+                    <div class="project-content">
+                        <h3>Deepfake Detection</h3>
+                        <p>Engineered a deepfake detection pipeline with PyTorch, achieving 91.2% accuracy. Deployed a scalable FastAPI and Docker-based REST API for real-time inference and integrated Grad-CAM for model explainability.</p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">OpenCV</span>
+                            <span class="tag">XAI</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/Aaryan2304/deepfake-detection" target="_blank">View on GitHub</a>
+                    <a href="https://github.com/Aaryan2304/deepfake-detection" target="_blank" class="project-link">View on GitHub &rarr;</a>
                 </div>
-                <div class="project-card fade-in">
-                    <h3>Video Anomaly Detection System</h3>
-                    <p>Developed a production-grade anomaly detection system using a PyTorch-based autoencoder, attaining 92.5% precision on the UCSD Ped2 dataset. Architected a scalable FastAPI and Docker-based REST API, enabling real-time video analysis with a processing speed of ~0.2 seconds per clip.</p>
-                     <div class="project-tags">
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">MLOps</span>
-                        <span class="tag">Autoencoder</span>
+                <div class="project-card glass-card fade-in">
+                    <div class="project-content">
+                        <h3>Video Anomaly Detection</h3>
+                        <p>Developed a production-grade anomaly detection system using a PyTorch-based autoencoder (92.5% precision). Architected a scalable FastAPI and Docker-based REST API for real-time video analysis.</p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">MLOps</span>
+                            <span class="tag">Autoencoder</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/Aaryan2304/cctv-video-anomaly-detection" target="_blank">View on GitHub</a>
+                    <a href="https://github.com/Aaryan2304/cctv-video-anomaly-detection" target="_blank" class="project-link">View on GitHub &rarr;</a>
                 </div>
-                <div class="project-card fade-in">
-                    <h3>AI-Powered Visual Search Engine</h3>
-                    <p>Architected a visual search engine for over 100,000 fashion images, delivering results with under 100ms latency. Engineered a full-stack ML pipeline using CLIP and FAISS, optimized with FastAPI and a Streamlit UI, and achieved over 60% memory efficiency with a robust testing framework ensuring 100% code reliability.</p>
-                     <div class="project-tags">
-                        <span class="tag">CLIP</span>
-                        <span class="tag">FAISS</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Streamlit</span>
-                        <span class="tag">PyTorch</span>
+                <div class="project-card glass-card fade-in">
+                    <div class="project-content">
+                        <h3>AI Visual Search Engine</h3>
+                        <p>Architected a visual search engine for 100k+ fashion images (<100ms latency). Engineered a full-stack ML pipeline using CLIP and FAISS, optimized with FastAPI and a Streamlit UI.</p>
+                        <div class="project-tags">
+                            <span class="tag">CLIP</span>
+                            <span class="tag">FAISS</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Streamlit</span>
+                            <span class="tag">PyTorch</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/Aaryan2304/visual-search-engine" target="_blank">View on GitHub</a>
+                    <a href="https://github.com/Aaryan2304/visual-search-engine" target="_blank" class="project-link">View on GitHub &rarr;</a>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="fade-in">
+        <section id="skills" class="fade-in section-block">
             <h2>Technical Skills</h2>
-             <ul>
-                <li><strong>Programming Languages:</strong> Python, MySQL</li>
-                <li><strong>Frameworks & Libraries:</strong> TensorFlow, PyTorch, NumPy, Pandas, Scikit-learn, Matplotlib, Tableau</li>
-                <li><strong>Specializations:</strong> Computer Vision, Natural Language Processing (NLP)</li>
-                <li><strong>Tools & Platforms:</strong> OpenCV, LLMs, VLM, OCR, Docker, Streamlit, FastAPI, 3D Vision, Git, CUDA, Object Detection, MLOps, Roboflow, CVAT, Jupyter, GCP, Fine-tuning, LangGraph, Reinforcement Learning, Explainable AI (XAI), Generative AI, SLAM</li>
-                <li><strong>Language Proficiency:</strong> English: Full Professional Proficiency
-            </ul>
+            <div class="glass-card skills-container">
+                <ul>
+                    <li><strong>Programming Languages:</strong> Python, MySQL</li>
+                    <li><strong>Frameworks & Libraries:</strong> TensorFlow, PyTorch, NumPy, Pandas, Scikit-learn, Matplotlib, Tableau</li>
+                    <li><strong>Specializations:</strong> Computer Vision, NLP, MLOps, Generative AI</li>
+                    <li><strong>Tools & Platforms:</strong> OpenCV, Docker, FastAPI, Streamlit, GCP, LangGraph, CUDA, Git, CVAT, Roboflow</li>
+                </ul>
+            </div>
         </section>
-         <section id="education" class="fade-in">
+
+        <section id="education" class="fade-in section-block">
             <h2>Education</h2>
-            <p><strong>MIT World Peace University (MIT-WPU) - Pune, India</strong></p>
-            <p>B.Tech, Electronics and Communication Engineering - AI/ML (Jun 2021 - Jun 2025)</p>
+            <div class="glass-card">
+                <h3>MIT World Peace University (MIT-WPU)</h3>
+                <p>Pune, India</p>
+                <p><strong>B.Tech, Electronics and Communication Engineering - AI/ML</strong></p>
+                <p class="experience-date">Jun 2021 - Jun 2025</p>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2025 Aaryan Kurade.</p>
+            <p>© 2025 Aaryan Kurade. All rights reserved.</p>
         </div>
     </footer>
+
     <script>
-        // Fade-in animation logic
+        // --- Three.js "Neural Network" Background ---
+        const initThreeJS = () => {
+            const container = document.getElementById('canvas-container');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+
+            // Create Particles
+            const particleCount = 100; // Adjust for density
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const velocities = [];
+
+            for (let i = 0; i < particleCount; i++) {
+                positions[i * 3] = (Math.random() - 0.5) * 20; // x
+                positions[i * 3 + 1] = (Math.random() - 0.5) * 20; // y
+                positions[i * 3 + 2] = (Math.random() - 0.5) * 20; // z
+                
+                velocities.push({
+                    x: (Math.random() - 0.5) * 0.02,
+                    y: (Math.random() - 0.5) * 0.02,
+                    z: (Math.random() - 0.5) * 0.02
+                });
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            
+            // Material for Dots
+            const particlesMaterial = new THREE.PointsMaterial({
+                color: 0x007BFF,
+                size: 0.15,
+                transparent: true,
+                opacity: 0.8
+            });
+
+            const particlesMesh = new THREE.Points(geometry, particlesMaterial);
+            scene.add(particlesMesh);
+
+            // Lines setup
+            const lineMaterial = new THREE.LineBasicMaterial({
+                color: 0x007BFF,
+                transparent: true,
+                opacity: 0.2
+            });
+
+            camera.position.z = 5;
+
+            // Mouse interaction
+            let mouseX = 0;
+            let mouseY = 0;
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+                mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+            });
+
+            // Theme Update Logic
+            window.updateThreeTheme = (theme) => {
+                if (theme === 'dark') {
+                    particlesMaterial.color.setHex(0x4dbbff); // Light Blue in dark mode
+                    lineMaterial.color.setHex(0x4dbbff);
+                    lineMaterial.opacity = 0.15;
+                } else {
+                    particlesMaterial.color.setHex(0x0056b3); // Dark Blue in light mode
+                    lineMaterial.color.setHex(0x0056b3);
+                    lineMaterial.opacity = 0.15;
+                }
+            };
+
+            // Animation Loop
+            const animate = () => {
+                requestAnimationFrame(animate);
+
+                // Move particles
+                const positions = particlesMesh.geometry.attributes.position.array;
+                for (let i = 0; i < particleCount; i++) {
+                    positions[i * 3] += velocities[i].x;
+                    positions[i * 3 + 1] += velocities[i].y;
+                    positions[i * 3 + 2] += velocities[i].z;
+
+                    // Boundary check to keep particles in view
+                    if(Math.abs(positions[i * 3]) > 10) velocities[i].x *= -1;
+                    if(Math.abs(positions[i * 3 + 1]) > 10) velocities[i].y *= -1;
+                    if(Math.abs(positions[i * 3 + 2]) > 10) velocities[i].z *= -1;
+                }
+                particlesMesh.geometry.attributes.position.needsUpdate = true;
+
+                // Rotate entire system slightly based on mouse
+                scene.rotation.x += 0.0005;
+                scene.rotation.y += 0.0005;
+                scene.rotation.x += (mouseY * 0.05 - scene.rotation.x) * 0.05;
+                scene.rotation.y += (mouseX * 0.05 - scene.rotation.y) * 0.05;
+
+                // Draw lines dynamically
+                // Note: Creating lines every frame is expensive, but fine for <100 particles
+                const lineGeometry = new THREE.BufferGeometry();
+                const linePositions = [];
+                
+                for (let i = 0; i < particleCount; i++) {
+                    for (let j = i + 1; j < particleCount; j++) {
+                        const dx = positions[i * 3] - positions[j * 3];
+                        const dy = positions[i * 3 + 1] - positions[j * 3 + 1];
+                        const dz = positions[i * 3 + 2] - positions[j * 3 + 2];
+                        const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
+
+                        if (dist < 3) { // Connection threshold
+                            linePositions.push(
+                                positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2],
+                                positions[j * 3], positions[j * 3 + 1], positions[j * 3 + 2]
+                            );
+                        }
+                    }
+                }
+                lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+                
+                // Remove old lines
+                const oldLines = scene.children.find(c => c.type === 'LineSegments');
+                if(oldLines) scene.remove(oldLines);
+
+                const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+                scene.add(lines);
+
+                renderer.render(scene, camera);
+            };
+
+            animate();
+
+            // Handle Resize
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        };
+
+        initThreeJS();
+
+
+        // --- Fade In & Theme Logic (Enhanced) ---
         document.addEventListener("DOMContentLoaded", function() {
             const fadeInElements = document.querySelectorAll('.fade-in');
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
-            fadeInElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
+            fadeInElements.forEach(element => observer.observe(element));
 
-        // Dark/Light mode toggle logic
-        const themeToggle = document.getElementById('theme-toggle');
-        
-        // Function to set theme based on preference
-        const setTheme = (theme) => {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        };
+            const themeToggle = document.getElementById('theme-toggle');
+            
+            const setTheme = (theme) => {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                // Update Three.js colors
+                if(window.updateThreeTheme) window.updateThreeTheme(theme);
+            };
 
-        // Check for saved theme in localStorage
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme) {
+            const currentTheme = localStorage.getItem('theme') || 'light';
             setTheme(currentTheme);
-        } else {
-            // Default to light theme if no preference is saved
-            setTheme('light');
-        }
 
-        // Listen for click on the toggle button
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                setTheme('light');
-            } else {
-                setTheme('dark');
-            }
+            themeToggle.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                setTheme(current === 'dark' ? 'light' : 'dark');
+            });
         });
     </script>
 </body>
