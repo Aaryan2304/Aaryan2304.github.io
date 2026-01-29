@@ -1,399 +1,426 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaryan Kurade | ML Engineer</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaryan Kurade | ML Engineer</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<!-- FontAwesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 </head>
 <body>
+<div id="canvas-container"></div>
+<div class="container">
+    <header>
+        <div class="reveal-element">
+            <!-- 4. Added Hero Badge -->
+            <div class="hero-badge">Open to Work: AI/ML Engineer</div>
+            
+            <p class="subtitle">01 // Introduction</p>
+            <h1>Aaryan Kurade</h1>
+            <p style="font-size: 1.5rem; color: var(--text-main);">Machine Learning Engineer</p>
+        </div>
+        
+        <!-- 3. Updated Nav with Icons -->
+        <nav class="reveal-element">
+            <a href="mailto:aaryankurade27@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/aaryan-kurade" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Aaryan2304" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://medium.com/@aaryankurade0101" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>
+        </nav>
+    </header>
 
-    <div id="canvas-container"></div>
-
-    <div class="container">
-        <header>
-            <div class="reveal-element">
-                <p class="subtitle">01 // Introduction</p>
-                <h1>Aaryan Kurade</h1>
-                <p style="font-size: 1.5rem; color: var(--text-main);">Machine Learning Engineer</p>
+    <!-- 02 // Profile (About) -->
+    <section id="about" style="margin-bottom: 8rem;">
+        <div class="reveal-element">
+            <p class="subtitle">02 // Profile</p>
+            <h2>About Me</h2>
+            <div class="tech-card about-card tilt-card">
+                <p style="font-size: 1.1rem; margin: 0;">
+                    I am an AI/ML Engineer specialized in architecting high-performance Computer Vision systems and Agentic AI workflows. Expert in building autonomous systems using LangGraph and Agentic RAG, while optimizing vision models via ONNX for real-time inference. Proven track record in deploying scalable, non-blocking backends using FastAPI and Docker, with a focus on system observability and hardware-efficient execution.
+                </p>
             </div>
-            <nav class="reveal-element">
-                <a href="mailto:aaryankurade27@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/aaryan-kurade" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Aaryan2304" target="_blank">GitHub</a>
-                <a href="https://medium.com/@aaryankurade0101" target="_blank">Medium</a>
-            </nav>
-        </header>
+        </div>
+    </section>
 
-        <section id="about" style="margin-bottom: 8rem;">
-            <div class="reveal-element">
-                <p class="subtitle">02 // Profile</p>
-                <h2>About Me</h2>
-                <div class="tech-card about-card tilt-card">
-                    <p style="font-size: 1.1rem; margin: 0;">
-                        I am an AI/ML Engineer specialized in architecting high-performance Computer Vision systems and Agentic AI workflows. Expert in building autonomous systems using LangGraph and Agentic RAG, while optimizing vision models via ONNX for real-time inference. Proven track record in deploying scalable, non-blocking backends using FastAPI and Docker, with a focus on system observability and hardware-efficient execution.
-                    </p>
+    <!-- 03 // Technical Arsenal (Skills) - 1. Updated Subsections -->
+    <section id="skills" style="margin-bottom: 8rem;">
+        <div class="reveal-element">
+            <p class="subtitle">03 // Stack</p>
+            <h2>Technical Arsenal</h2>
+            <div class="tech-card skills-card">
+                
+                <!-- Retained from Original -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-code"></i> Languages & Core</h4>
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL / MySQL</li>
+                        <li>C++ (Basic)</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section id="experience" style="margin-bottom: 8rem;">
-            <div class="reveal-element">
-                <p class="subtitle">03 // Career</p>
-                <h2>Experience</h2>
-                <div class="experience-grid">
-                    <div class="tech-card tilt-card">
-                        <div class="experience-header">
-                            <div>
-                                <h3>Machine Learning Engineer - Intern</h3>
-                                <span class="company-name">Utopia Optovision Pvt. Ltd.</span>
-                            </div>
-                            <span class="exp-date">Jan 2024 - Jan 2025</span>
-                        </div>
-                        <ul class="tech-list">
-                            <li>Deployed YOLO + OCR pipeline for automated document text extraction, processing 2,000+ invoices daily.</li>
-                            <li>Reduced OCR error rate from 18% to 7% through image preprocessing (deskewing, contrast normalization).</li>
-                            <li>Applied advanced computer vision approaches by leveraging OCR and object detection, resulting in a 15% improvement in model accuracy for a key product feature.</li>
-                        </ul>
-                    </div>
-
-                    <div class="tech-card tilt-card">
-                        <div class="experience-header">
-                            <div>
-                                <h3>Software Engineer - Intern</h3>
-                                <span class="company-name">Arakoo.ai</span>
-                            </div>
-                            <span class="exp-date">Aug 2025 - Nov 2025</span>
-                        </div>
-                        <ul class="tech-list">
-                            <li>Built real-time ASR pipeline with Voice Activity Detection, reducing false transcription triggers by 40% via signal preprocessing.</li>
-                            <li>Deployed speaker diarization module using FastAPI async endpoints handling 50+ concurrent audio streams.</li>
-                            <li>Implemented prompt caching strategies cutting LLM inference costs by $0.02/minute of audio processed.</li>
-                        </ul>
-                    </div>
+                <!-- New: Computer Vision -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-eye"></i> Computer Vision</h4>
+                    <ul>
+                        <li>PyTorch, TensorFlow</li>
+                        <li>YOLO, RF-DETR, ONNX</li>
+                        <li>OpenCV, OCR</li>
+                        <li>VLMs, Segmentation</li>
+                        <li>Object Detection / Keypoints</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section id="projects" style="margin-bottom: 8rem;">
-            <div class="reveal-element">
-                <p class="subtitle">04 // Portfolio</p>
-                <h2>Featured Projects</h2>
-                <div class="project-grid">
-                    <div class="tech-card project-card tilt-card">
-                        <h3>Deepfake Detection</h3>
-                        <p>Real-time binary classifier using EfficientNet-B0 and MTCNN. Features a scalable REST API and a comprehensive ethics report on responsible AI deployment.</p>
-                        <div class="tags">
-                            <span class="tag">PyTorch</span>
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">XAI</span>
-                        </div>
-                        <a href="https://github.com/Aaryan2304/deepfake-detection" target="_blank" class="project-link">View on GitHub &rarr;</a>
-                    </div>
-
-                    <div class="tech-card project-card tilt-card">
-                        <h3>Video Anomaly Detection</h3>
-                        <p>Non-blocking video processing pipeline using Convolutional Autoencoders. Engineered to handle high-bitrate streams without timeout errors.</p>
-                        <div class="tags">
-                            <span class="tag">PyTorch</span>
-                            <span class="tag">Autoencoder</span>
-                            <span class="tag">MLOps</span>
-                        </div>
-                        <a href="https://github.com/Aaryan2304/cctv-video-anomaly-detection" target="_blank" class="project-link">View on GitHub &rarr;</a>
-                    </div>
-
-                    <div class="tech-card project-card tilt-card">
-                        <h3>Visual Search Engine</h3>
-                        <p>Deployed semantic search for 100K fashion images using CLIP embeddings + FAISS. Optimized for production with GPU acceleration and hardware detection.</p>
-                        <div class="tags">
-                            <span class="tag">Pytorch</span>
-                            <span class="tag">CLIP</span>
-                            <span class="tag">FAISS</span>
-                            <span class="tag">Docker</span>
-                        </div>
-                        <a href="https://github.com/Aaryan2304/visual-search-engine" target="_blank" class="project-link">View on GitHub &rarr;</a>
-                    </div>
+                <!-- New: AI Agents & LLMs -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-brain"></i> AI Agents & LLMs</h4>
+                    <ul>
+                        <li>LangChain, LangGraph</li>
+                        <li>Agentic RAG</li>
+                        <li>Hugging Face Transformers</li>
+                        <li>Vector DBs (Pinecone/Chroma)</li>
+                        <li>vLLM, LoRA / PEFT</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section id="skills" style="margin-bottom: 6rem;">
-            <div class="reveal-element">
-                <p class="subtitle">05 // Stack</p>
-                <h2>Technical Arsenal</h2>
-                <div class="tech-card skills-card">
-                    <div class="skill-category">
-                        <h4>Languages & Core</h4>
-                        <ul>
-                            <li>Python</li>
-                            <li>SQL / MySQL</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>AI Frameworks</h4>
-                        <ul>
-                            <li>PyTorch</li>
-                            <li>OpenCV</li>
-                            <li>TensorFlow</li>
-                            <li>LangGraph</li>
-                            <li>Tableau</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Deployment / MLOps</h4>
-                        <ul>
-                            <li>Docker</li>
-                            <li>FastAPI</li>
-                            <li>GCP</li>
-                            <li>Git & CI/CD</li>
-                            <li>Streamlit</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Specialization</h4>
-                        <ul>
-                            <li>Computer Vision</li>
-                            <li>NLP</li>
-                            <li>LLMs / VLMs</li>
-                            <li>3D Vision</li>
-                            <li>OCR</li>
-                            <li>Object Detection/Instance Segmentation/Pose Estimation/Image Classification</li>
-                        </ul>
-                    </div>
+                <!-- New: MLOps & Backend -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-server"></i> MLOps & Backend</h4>
+                    <ul>
+                        <li>Docker, FastAPI</li>
+                        <li>GCP, Linux</li>
+                        <li>Git & CI/CD</li>
+                        <li>Prometheus, Streamlit</li>
+                        <li>Quantization (INT8/INT4)</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <section id="education">
-             <div class="reveal-element">
-                <p class="subtitle">06 // Background</p>
-                <h2>Education</h2>
-                <div class="tech-card">
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 // Featured Projects (Projects) - 5. Reordered Here & 2. Metrics Added -->
+    <section id="projects" style="margin-bottom: 8rem;">
+        <div class="reveal-element">
+            <p class="subtitle">04 // Portfolio</p>
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                
+                <!-- Project 1: Visual Search -->
+                <div class="tech-card project-card tilt-card">
+                    <h3>AI Visual Search Engine</h3>
+                    <p>Deployed semantic search for 100K fashion images using CLIP embeddings + FAISS. Optimized for production with GPU acceleration and hardware detection.</p>
+                    
+                    <!-- NEW METRICS BOX -->
+                    <div class="project-metrics">
+                        <div class="metric"><i class="fas fa-bolt"></i> < 100ms P95 Latency</div>
+                        <div class="metric"><i class="fas fa-memory"></i> 60%+ Memory Efficiency</div>
+                        <div class="metric"><i class="fas fa-check-circle"></i> 99%+ Uptime</div>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">Pytorch</span>
+                        <span class="tag">CLIP</span>
+                        <span class="tag">FAISS</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                    <!-- NEW ICON LINK -->
+                    <a href="https://github.com/Aaryan2304/visual-search-engine" target="_blank" class="github-icon-link" title="View on GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <!-- Project 2: Video Anomaly -->
+                <div class="tech-card project-card tilt-card">
+                    <h3>Video Anomaly Detection</h3>
+                    <p>Non-blocking video processing pipeline using Convolutional Autoencoders. Engineered to handle high-bitrate streams without timeout errors.</p>
+                    
+                    <!-- NEW METRICS BOX -->
+                    <div class="project-metrics">
+                        <div class="metric"><i class="fas fa-bullseye"></i> 0.92 Precision</div>
+                        <div class="metric"><i class="fas fa-tachometer-alt"></i> Non-blocking Async</div>
+                        <div class="metric"><i class="fas fa-chart-line"></i> Prometheus Monitoring</div>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Autoencoder</span>
+                        <span class="tag">MLOps</span>
+                    </div>
+                    <a href="https://github.com/Aaryan2304/cctv-video-anomaly-detection" target="_blank" class="github-icon-link" title="View on GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <!-- Project 3: Deepfake -->
+                <div class="tech-card project-card tilt-card">
+                    <h3>Deepfake Detection</h3>
+                    <p>Real-time binary classifier using EfficientNet-B0 and MTCNN. Features a scalable REST API and a comprehensive ethics report on responsible AI deployment.</p>
+                    
+                    <!-- NEW METRICS BOX -->
+                    <div class="project-metrics">
+                        <div class="metric"><i class="fas fa-check-double"></i> 91.2% Accuracy</div>
+                        <div class="metric"><i class="fas fa-chart-area"></i> 0.978 ROC-AUC</div>
+                        <div class="metric"><i class="fas fa-search-location"></i> Grad-CAM XAI</div>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">XAI</span>
+                    </div>
+                    <a href="https://github.com/Aaryan2304/deepfake-detection" target="_blank" class="github-icon-link" title="View on GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 // Career (Experience) - 5. Reordered Here -->
+    <section id="experience" style="margin-bottom: 8rem;">
+        <div class="reveal-element">
+            <p class="subtitle">05 // Career</p>
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                <div class="tech-card tilt-card">
                     <div class="experience-header">
                         <div>
-                            <h3>MIT World Peace University</h3>
-                            <p style="margin:0; color: var(--primary-neon);">B.Tech, Electronics & Communication Engineering - AI/ML</p>
+                            <h3>Machine Learning Engineer - Intern</h3>
+                            <span class="company-name">Utopia Optovision Pvt. Ltd.</span>
                         </div>
-                        <span class="exp-date">Jun 2021 - Jun 2025</span>
+                        <span class="exp-date">Jan 2024 - Jan 2025</span>
                     </div>
-                    <p style="margin-bottom: 0;">Pune, India</p>
+                    <ul class="tech-list">
+                        <li>Deployed YOLO + OCR pipeline for automated document text extraction, processing 2,000+ invoices daily.</li>
+                        <li>Reduced OCR error rate from 18% to 7% through image preprocessing (deskewing, contrast normalization).</li>
+                        <li>Applied advanced computer vision approaches by leveraging OCR and object detection, resulting in a 15% improvement in model accuracy for a key product feature.</li>
+                    </ul>
                 </div>
-             </div>
-        </section>
-    </div>
+                <div class="tech-card tilt-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Software Engineer - Intern</h3>
+                            <span class="company-name">Arakoo.ai</span>
+                        </div>
+                        <span class="exp-date">Aug 2025 - Nov 2025</span>
+                    </div>
+                    <ul class="tech-list">
+                        <li>Built real-time ASR pipeline with Voice Activity Detection, reducing false transcription triggers by 40% via signal preprocessing.</li>
+                        <li>Deployed speaker diarization module using FastAPI async endpoints handling 50+ concurrent audio streams.</li>
+                        <li>Implemented prompt caching strategies cutting LLM inference costs by $0.02/minute of audio processed.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>Designed & Engineered by Aaryan Kurade © 2026</p>
-    </footer>
+    <!-- 06 // Background (Education) - 5. Moved to End -->
+    <section id="education">
+        <div class="reveal-element">
+            <p class="subtitle">06 // Background</p>
+            <h2>Education</h2>
+            <div class="tech-card">
+                <div class="experience-header">
+                    <div>
+                        <h3>MIT World Peace University</h3>
+                        <p style="margin:0; color: var(--primary-neon);">B.Tech, Electronics & Communication Engineering - AI/ML</p>
+                    </div>
+                    <span class="exp-date">Jun 2021 - Jun 2025</span>
+                </div>
+                <p style="margin-bottom: 0;">Pune, India</p>
+            </div>
+        </div>
+    </section>
+</div>
 
-    <script>
-        // --- 1. Staggered Reveal Animation ---
-        document.addEventListener("DOMContentLoaded", () => {
-            const reveals = document.querySelectorAll('.reveal-element');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+<!-- 6. Footer Centered -->
+<footer>
+    <p>Designed & Engineered by Aaryan Kurade © 2026</p>
+</footer>
 
-            reveals.forEach(el => observer.observe(el));
-        });
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// --- 1. Staggered Reveal Animation ---
+document.addEventListener("DOMContentLoaded", () => {
+const reveals = document.querySelectorAll('.reveal-element');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+reveals.forEach(el => observer.observe(el));
+});
 
-        // --- 2. 3D Tilt Effect ---
-        const cards = document.querySelectorAll('.tilt-card');
+// --- 2. 3D Tilt Effect ---
+const cards = document.querySelectorAll('.tilt-card');
+cards.forEach(card => {
+card.addEventListener('mousemove', (e) => {
+const rect = card.getBoundingClientRect();
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
 
-        cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                // Calculate rotation
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = ((y - centerY) / centerY) * -5;
-                const rotateY = ((x - centerX) / centerX) * 5;
+// Calculate rotation
+const centerX = rect.width / 2;
+const centerY = rect.height / 2;
 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            });
+const rotateX = ((y - centerY) / centerY) * -5;
+const rotateY = ((x - centerX) / centerX) * 5;
+card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+});
+card.addEventListener('mouseleave', () => {
+card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+});
+});
 
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-            });
-        });
+// --- 3. Three.js "Computer Vision" LiDAR Scan ---
+const initThreeJS = () => {
+const container = document.getElementById('canvas-container');
+const scene = new THREE.Scene();
 
+// Fog for depth
+scene.fog = new THREE.FogExp2(0x030305, 0.015);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 5, 15);
+camera.lookAt(0, 0, 0);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
 
-        // --- 3. Three.js "Computer Vision" LiDAR Scan ---
-        const initThreeJS = () => {
-            const container = document.getElementById('canvas-container');
-            const scene = new THREE.Scene();
-            
-            // Fog for depth
-            scene.fog = new THREE.FogExp2(0x030305, 0.015);
+// --- Part A: LiDAR Terrain (Point Cloud) ---
+const particlesGeometry = new THREE.BufferGeometry();
+const count = 3000;
 
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.set(0, 5, 15);
-            camera.lookAt(0, 0, 0);
+const positions = new Float32Array(count * 3);
+const colors = new Float32Array(count * 3);
+// Create a wavy grid of points
+for (let i = 0; i < count; i++) {
+const x = (Math.random() - 0.5) * 50;
+const z = (Math.random() - 0.5) * 50;
+const y = Math.sin(x * 0.2) * Math.cos(z * 0.2) * 1.5; // Wavy terrain
+positions[i * 3] = x;
+positions[i * 3 + 1] = y - 5; // Shift down
+positions[i * 3 + 2] = z;
+// Initial color (dark)
+colors[i * 3] = 0.2;
+colors[i * 3 + 1] = 0.2;
+colors[i * 3 + 2] = 0.25;
+}
+particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+const particlesMaterial = new THREE.PointsMaterial({
+size: 0.12,
+vertexColors: true,
+transparent: true,
+opacity: 0.8
+});
+const terrain = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(terrain);
 
-            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(window.devicePixelRatio);
-            container.appendChild(renderer.domElement);
+// --- Part B: Floating Tracking Rectangles (Bounding Boxes) ---
+const createReticle = () => {
+// Create a square shape
+const geometry = new THREE.BufferGeometry();
+const vertices = new Float32Array([
+-1, -1, 0, 1, -1, 0,
+1, -1, 0, 1, 1, 0,
+1, 1, 0, -1, 1, 0,
+-1, 1, 0, -1, -1, 0
+]);
+geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+const material = new THREE.LineBasicMaterial({ color: 0x3B82F6, transparent: true, opacity: 0.5 });
+return new THREE.LineSegments(geometry, material);
+};
+const reticles = [];
+for(let i=0; i<4; i++) {
+const r = createReticle();
+r.position.set(
+(Math.random() - 0.5) * 20,
+(Math.random() - 0.5) * 10,
+(Math.random() - 0.5) * 10
+);
+r.userData = {
+speed: Math.random() * 0.02 + 0.01,
+dirX: Math.random() > 0.5 ? 1 : -1,
+dirY: Math.random() > 0.5 ? 1 : -1
+};
+scene.add(r);
+reticles.push(r);
+}
+// Mouse interaction vars
+let mouseX = 0;
+let mouseY = 0;
+document.addEventListener('mousemove', (event) => {
+mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+});
+// Animation Loop
+let time = 0;
+const animate = () => {
+requestAnimationFrame(animate);
+time += 0.05;
+// 1. Terrain Rotation & Scanning Effect
+terrain.rotation.y += 0.001;
+const positions = terrain.geometry.attributes.position.array;
+const colors = terrain.geometry.attributes.color.array;
 
-            // --- Part A: LiDAR Terrain (Point Cloud) ---
-            const particlesGeometry = new THREE.BufferGeometry();
-            const count = 3000;
-            
-            const positions = new Float32Array(count * 3);
-            const colors = new Float32Array(count * 3);
+// Update colors based on "scan wave" logic
+// We visualize a scan line moving across the terrain
+const scanPos = Math.sin(time * 0.5) * 25; // Oscillate between -25 and 25
+for (let i = 0; i < count; i++) {
+const x = positions[i * 3];
+// If point is near the scan line...
+if (Math.abs(x - scanPos) < 3.0) {
+// Highlight Neon Blue
+colors[i * 3] = 0.23; // R
+colors[i * 3 + 1] = 0.51; // G
+colors[i * 3 + 2] = 0.96; // B
+} else {
+// Fade back to dark grey/blue
+colors[i * 3] *= 0.95; // Decay trail
+if (colors[i * 3] < 0.1) colors[i * 3] = 0.1; // Floor
+colors[i * 3 + 1] *= 0.95;
+if (colors[i * 3 + 1] < 0.1) colors[i * 3 + 1] = 0.1;
+colors[i * 3 + 2] *= 0.95;
+if (colors[i * 3 + 2] < 0.15) colors[i * 3 + 2] = 0.15;
+}
+}
+terrain.geometry.attributes.color.needsUpdate = true;
+// 2. Reticles Animation (Floating Bounding Boxes)
+reticles.forEach(r => {
+r.rotation.z += 0.01;
+r.rotation.y += 0.01;
 
-            // Create a wavy grid of points
-            for (let i = 0; i < count; i++) {
-                const x = (Math.random() - 0.5) * 50;
-                const z = (Math.random() - 0.5) * 50;
-                const y = Math.sin(x * 0.2) * Math.cos(z * 0.2) * 1.5; // Wavy terrain
-
-                positions[i * 3] = x;
-                positions[i * 3 + 1] = y - 5; // Shift down
-                positions[i * 3 + 2] = z;
-
-                // Initial color (dark)
-                colors[i * 3] = 0.2;
-                colors[i * 3 + 1] = 0.2;
-                colors[i * 3 + 2] = 0.25;
-            }
-
-            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-            const particlesMaterial = new THREE.PointsMaterial({
-                size: 0.12,
-                vertexColors: true,
-                transparent: true,
-                opacity: 0.8
-            });
-
-            const terrain = new THREE.Points(particlesGeometry, particlesMaterial);
-            scene.add(terrain);
-
-            // --- Part B: Floating Tracking Rectangles (Bounding Boxes) ---
-            const createReticle = () => {
-                // Create a square shape
-                const geometry = new THREE.BufferGeometry();
-                const vertices = new Float32Array([
-                    -1, -1, 0,  1, -1, 0,
-                    1, -1, 0,   1,  1, 0,
-                    1,  1, 0,  -1,  1, 0,
-                    -1,  1, 0, -1, -1, 0
-                ]);
-                geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
-                const material = new THREE.LineBasicMaterial({ color: 0x3B82F6, transparent: true, opacity: 0.5 });
-                return new THREE.LineSegments(geometry, material);
-            };
-
-            const reticles = [];
-            for(let i=0; i<4; i++) {
-                const r = createReticle();
-                r.position.set(
-                    (Math.random() - 0.5) * 20, 
-                    (Math.random() - 0.5) * 10, 
-                    (Math.random() - 0.5) * 10
-                );
-                r.userData = { 
-                    speed: Math.random() * 0.02 + 0.01, 
-                    dirX: Math.random() > 0.5 ? 1 : -1,
-                    dirY: Math.random() > 0.5 ? 1 : -1
-                };
-                scene.add(r);
-                reticles.push(r);
-            }
-
-            // Mouse interaction vars
-            let mouseX = 0;
-            let mouseY = 0;
-            document.addEventListener('mousemove', (event) => {
-                mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-                mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-            });
-
-            // Animation Loop
-            let time = 0;
-            const animate = () => {
-                requestAnimationFrame(animate);
-                time += 0.05;
-
-                // 1. Terrain Rotation & Scanning Effect
-                terrain.rotation.y += 0.001;
-
-                const positions = terrain.geometry.attributes.position.array;
-                const colors = terrain.geometry.attributes.color.array;
-                
-                // Update colors based on "scan wave" logic
-                // We visualize a scan line moving across the terrain
-                const scanPos = Math.sin(time * 0.5) * 25; // Oscillate between -25 and 25
-
-                for (let i = 0; i < count; i++) {
-                    const x = positions[i * 3];
-                    // If point is near the scan line...
-                    if (Math.abs(x - scanPos) < 3.0) {
-                        // Highlight Neon Blue
-                        colors[i * 3] = 0.23;     // R
-                        colors[i * 3 + 1] = 0.51; // G
-                        colors[i * 3 + 2] = 0.96; // B
-                    } else {
-                        // Fade back to dark grey/blue
-                        colors[i * 3] *= 0.95; // Decay trail
-                        if (colors[i * 3] < 0.1) colors[i * 3] = 0.1; // Floor
-                        colors[i * 3 + 1] *= 0.95;
-                        if (colors[i * 3 + 1] < 0.1) colors[i * 3 + 1] = 0.1;
-                        colors[i * 3 + 2] *= 0.95;
-                        if (colors[i * 3 + 2] < 0.15) colors[i * 3 + 2] = 0.15;
-                    }
-                }
-                terrain.geometry.attributes.color.needsUpdate = true;
-
-                // 2. Reticles Animation (Floating Bounding Boxes)
-                reticles.forEach(r => {
-                    r.rotation.z += 0.01;
-                    r.rotation.y += 0.01;
-                    
-                    // Drift movement
-                    r.position.x += r.userData.speed * r.userData.dirX;
-                    r.position.y += r.userData.speed * r.userData.dirY;
-
-                    // Boundary checks
-                    if(Math.abs(r.position.x) > 15) r.userData.dirX *= -1;
-                    if(Math.abs(r.position.y) > 8) r.userData.dirY *= -1;
-
-                    // Slight parallax with mouse
-                    r.position.x += (mouseX * 0.05 - r.position.x * 0.001) * 0.02;
-                });
-
-                renderer.render(scene, camera);
-            };
-
-            animate();
-
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-        };
-
-        initThreeJS();
-    </script>
+// Drift movement
+r.position.x += r.userData.speed * r.userData.dirX;
+r.position.y += r.userData.speed * r.userData.dirY;
+// Boundary checks
+if(Math.abs(r.position.x) > 15) r.userData.dirX *= -1;
+if(Math.abs(r.position.y) > 8) r.userData.dirY *= -1;
+// Slight parallax with mouse
+r.position.x += (mouseX * 0.05 - r.position.x * 0.001) * 0.02;
+});
+renderer.render(scene, camera);
+};
+animate();
+window.addEventListener('resize', () => {
+camera.aspect = window.innerWidth / window.innerHeight;
+camera.updateProjectionMatrix();
+renderer.setSize(window.innerWidth, window.innerHeight);
+});
+};
+initThreeJS();
+</script>
 </body>
 </html>
