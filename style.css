@@ -297,7 +297,7 @@ nav a:hover {
 /* --- Skills (Updated Structure) --- */
 .skills-card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly wider min-width */
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns for even distribution */
     gap: 2rem;
 }
 .skill-category h4 {
@@ -328,9 +328,18 @@ footer {
     padding: 4rem 0;
     border-top: 1px solid var(--border-dim);
     margin-top: 6rem;
-    text-align: center; /* Centered as requested */
+    text-align: center;
     color: var(--text-muted);
     font-size: 0.85rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
 }
 
 /* --- Staggered Animation Classes --- */
@@ -349,6 +358,11 @@ footer {
     h1 { font-size: 3rem; }
     .container { width: 92%; }
     .project-grid { grid-template-columns: 1fr; }
+    .skills-card { grid-template-columns: 1fr; } /* Stack skills on mobile */
     header { padding: 6rem 0 3rem; }
     nav { justify-content: center; }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .skills-card { grid-template-columns: repeat(2, 1fr); } /* 2 columns on tablet */
 }
