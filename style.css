@@ -644,6 +644,73 @@ footer .footer-links a:hover { color: var(--amber); }
     transform: translateY(0);
 }
 
+/* --- HUD Telemetry Overlay --- */
+.hud-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.hud-corner {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    padding: 1.5rem;
+    opacity: 0.7;
+}
+
+.hud-tl { top: 5rem; left: 0; }
+.hud-tr { top: 5rem; right: 0; text-align: right; }
+.hud-bl { bottom: 2rem; left: 0; }
+.hud-br { bottom: 2rem; right: 0; text-align: right; }
+
+.hud-label {
+    color: var(--amber);
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.15em;
+    opacity: 0.8;
+}
+
+.hud-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-dim);
+}
+
+.hud-tr .hud-row,
+.hud-br .hud-row {
+    flex-direction: row-reverse;
+}
+
+.hud-row span:last-child {
+    color: var(--sat-blue);
+    font-variant-numeric: tabular-nums;
+}
+
+.hud-green {
+    color: var(--earth-green) !important;
+}
+
+.hud-corner::before {
+    content: '';
+    position: absolute;
+    width: 12px; height: 12px;
+    border: 1px solid var(--amber);
+    opacity: 0.4;
+}
+
+.hud-tl::before { top: 0.75rem; left: 0.75rem; border-right: none; border-bottom: none; }
+.hud-tr::before { top: 0.75rem; right: 0.75rem; border-left: none; border-bottom: none; }
+.hud-bl::before { bottom: 0.75rem; left: 0.75rem; border-right: none; border-top: none; }
+.hud-br::before { bottom: 0.75rem; right: 0.75rem; border-left: none; border-top: none; }
+
 @media (max-width: 768px) {
     .top-bar { padding: 0.75rem 1rem; }
     .nav-links { gap: 1rem; }
@@ -654,6 +721,7 @@ footer .footer-links a:hover { color: var(--amber); }
     .exp-top { flex-direction: column; }
     .edu-card { flex-direction: column; text-align: left; }
     .edu-right { text-align: left; }
+    .hud-overlay { display: none; }
 }
 
 @media (max-width: 480px) {
