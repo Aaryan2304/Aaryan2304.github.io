@@ -4,309 +4,351 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aaryan Kurade | CV & Geospatial Engineer</title>
+    <meta name="description" content="Portfolio of Aaryan Kurade - Computer Vision & Geospatial Engineer">
+    
+    <!-- Fonts & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.0.17/index.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.0.16/index.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-    <script src="script.js" defer></script>
 </head>
 <body>
 
-<div id="canvas-container"></div>
+    <!-- Three.js Background Container -->
+    <div id="canvas-container"></div>
 
-<div class="top-bar">
-    <div class="callsign">AKURADE // CV-OPS</div>
-    <nav class="nav-links">
-        <a href="#about"><span>01 </span>ABOUT</a>
-        <a href="#experience"><span>02 </span>EXP</a>
-        <a href="#projects"><span>03 </span>PROJECTS</a>
-        <a href="#skills"><span>04 </span>STACK</a>
-    </nav>
-    <div class="status">
-        <div class="status-dot"></div>
-        OPEN TO WORK
-    </div>
-</div>
-
-<section class="hero">
-    <div class="container">
-        <div class="hero-coords">
-            <span>LAT 18.5204°N</span> &nbsp;|&nbsp; <span>LON 73.8567°E</span> &nbsp;|&nbsp; PUNE, INDIA &nbsp;|&nbsp; SYS.ONLINE
+    <!-- HUD Telemetry Overlay -->
+    <div class="hud-overlay">
+        <div class="hud-corner hud-tl">
+            <div class="hud-label">SYS.TELEMETRY</div>
+            <div class="hud-row"><span>SAT</span><span id="hud-sat">05 ACTIVE</span></div>
+            <div class="hud-row"><span>ORBIT</span><span>LEO 550KM</span></div>
+            <div class="hud-row"><span>BAND</span><span id="hud-band">SAR X-BAND</span></div>
         </div>
-        <h1>Aaryan<br><span class="accent">Kurade</span></h1>
-        <p class="hero-subtitle">
-            Computer Vision & Geospatial Engineer — building production-grade perception systems from satellite imagery to robotic manipulation.
-        </p>
-        <div class="hero-badges">
-            <span class="badge badge-amber"><i class="fas fa-satellite"></i> Geospatial AI</span>
-            <span class="badge badge-blue"><i class="fas fa-eye"></i> Object Detection</span>
-            <span class="badge badge-green"><i class="fas fa-cube"></i> 3D Perception</span>
-            <span class="badge badge-amber"><i class="fas fa-robot"></i> VLMs & Agents</span>
+        <div class="hud-corner hud-tr">
+            <div class="hud-label">DOWNLINK</div>
+            <div class="hud-row"><span>LAT</span><span id="hud-lat">18.5204°N</span></div>
+            <div class="hud-row"><span>LON</span><span id="hud-lon">73.8567°E</span></div>
+            <div class="hud-row"><span>PAYLOAD</span><span id="hud-payload">~50KB</span></div>
         </div>
-        <div class="hero-links">
-            <a href="https://github.com/aaryankurade" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/aaryankurade" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:aaryankurade27@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <div class="hud-corner hud-bl">
+            <div class="hud-label">SPECTRAL</div>
+            <div class="hud-row"><span>MODE</span><span id="hud-mode">NDVI</span></div>
+            <div class="hud-row"><span>BASELINE</span><span>5-DAY</span></div>
+        </div>
+        <div class="hud-corner hud-br">
+            <div class="hud-label">UPLINK</div>
+            <div class="hud-row"><span>STATUS</span><span class="hud-green">● NOMINAL</span></div>
+            <div class="hud-row"><span>SIGNAL</span><span id="hud-signal">-42dBm</span></div>
         </div>
     </div>
-</section>
 
-<section id="about">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">01</span>
-            <h2>INTEL BRIEF</h2>
-            <div class="line"></div>
+    <!-- Top Navigation Bar -->
+    <div class="top-bar">
+        <div class="callsign">AKURADE // CV-OPS</div>
+        <nav class="nav-links">
+            <a href="#about"><span>01 </span>ABOUT</a>
+            <a href="#experience"><span>02 </span>EXP</a>
+            <a href="#projects"><span>03 </span>PROJECTS</a>
+            <a href="#skills"><span>04 </span>STACK</a>
+        </nav>
+        <div class="status">
+            <div class="status-dot"></div>
+            OPEN TO WORK
         </div>
-        <div class="about-card reveal">
-            <p>
-                Machine Learning Engineer with production experience across detection, segmentation, 3D perception, and geospatial applications. Architected and deployed real-time CV pipelines utilizing YOLO, RF-DETR, SAM, and advanced tracking frameworks (ByteTrack, DeepSORT). Engineered multi-sensor satellite imagery (SAR/EO/NIR) analytics, Vision-Language Model (VLM) fine-tuning, and SAHI/OBB remote sensing pipelines using GDAL, Rasterio, and QGIS. Expert in 3D coordinate transformations (URDF), point cloud processing, and concurrent robotic navigation platforms. Specialized in model optimization (ONNX, quantization) and scalable deployment (FastAPI + Docker); active OSS contributor.
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-coords">
+                <span>LAT 18.5204°N</span> &nbsp;|&nbsp; <span>LON 73.8567°E</span> &nbsp;|&nbsp; PUNE, INDIA &nbsp;|&nbsp; SYS.ONLINE
+            </div>
+            <h1>Aaryan<br><span class="accent">Kurade</span></h1>
+            <p class="hero-subtitle">
+                Computer Vision & Geospatial Engineer — building production-grade perception systems from satellite imagery to robotic manipulation.
             </p>
-            <div class="about-meta">
-                <div class="meta-item">
-                    <span class="label">Focus Area</span>
-                    <span class="value">CV / Geospatial / 3D</span>
-                </div>
-                <div class="meta-item">
-                    <span class="label">Experience</span>
-                    <span class="value">2+ Years Production</span>
-                </div>
-                <div class="meta-item">
-                    <span class="label">Deployment</span>
-                    <span class="value">Edge → Cloud</span>
-                </div>
-                <div class="meta-item">
-                    <span class="label">Status</span>
-                    <span class="value" style="color: var(--earth-green);">● Available</span>
-                </div>
+            <div class="hero-badges">
+                <span class="badge badge-amber"><i class="fas fa-satellite"></i> Geospatial AI</span>
+                <span class="badge badge-blue"><i class="fas fa-eye"></i> Object Detection</span>
+                <span class="badge badge-green"><i class="fas fa-cube"></i> 3D Perception</span>
+                <span class="badge badge-amber"><i class="fas fa-robot"></i> VLMs & Agents</span>
+            </div>
+            <div class="hero-links">
+                <a href="https://github.com/aaryankurade" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/aaryankurade" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:aaryankurade27@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="experience">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">02</span>
-            <h2>MISSION LOG</h2>
-            <div class="line"></div>
-        </div>
-        <div class="exp-timeline">
-            <div class="exp-card reveal">
-                <div class="exp-top">
-                    <div>
-                        <div class="exp-company">Intutive Research & Development (IRDPL)</div>
-                        <div class="exp-role">Machine Learning Engineer — Pune, India</div>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">01</span>
+                <h2>INTEL BRIEF</h2>
+                <div class="line"></div>
+            </div>
+            <div class="about-card reveal">
+                <p>
+                    Machine Learning Engineer with production experience across detection, segmentation, 3D perception, and geospatial applications. Architected and deployed real-time CV pipelines utilizing YOLO, RF-DETR, SAM, and advanced tracking frameworks (ByteTrack, DeepSORT). Engineered multi-sensor satellite imagery (SAR/EO/NIR) analytics, Vision-Language Model (VLM) fine-tuning, and SAHI/OBB remote sensing pipelines using GDAL, Rasterio, and QGIS. Expert in 3D coordinate transformations (URDF), point cloud processing, and concurrent robotic navigation platforms. Specialized in model optimization (ONNX, quantization) and scalable deployment (FastAPI + Docker); active OSS contributor.
+                </p>
+                <div class="about-meta">
+                    <div class="meta-item">
+                        <span class="label">Focus Area</span>
+                        <span class="value">CV / Geospatial / 3D</span>
                     </div>
-                    <span class="exp-date">APR 2025 — PRESENT</span>
-                </div>
-                <ul class="exp-bullets">
-                    <li>Engineered a real-time 3D spatial vision pipeline for robotic manipulation using multithreaded Python concurrency, optimizing multi-camera frame ingestion at deterministic low latency.</li>
-                    <li>Deployed production-grade detection & instance segmentation models integrated with STL CAD matching for precise 6-DoF object pose estimation.</li>
-                    <li>Built real-time 3D point cloud generation with URDF/Gantry kinematic transforms mapping camera coordinates to global world frames.</li>
-                    <li>Implemented concurrent data-streaming pipelines transmitting point clouds, 2D/3D bounding boxes, and segmentation masks to Navigation & Control nodes.</li>
-                </ul>
-            </div>
-            <div class="exp-card reveal">
-                <div class="exp-top">
-                    <div>
-                        <div class="exp-company">Arakoo.ai</div>
-                        <div class="exp-role">Software Engineer Intern — US, Remote</div>
+                    <div class="meta-item">
+                        <span class="label">Experience</span>
+                        <span class="value">2+ Years Production</span>
                     </div>
-                    <span class="exp-date">AUG 2025 — NOV 2025</span>
-                </div>
-                <ul class="exp-bullets">
-                    <li>Built real-time ASR pipeline with Voice Activity Detection, reducing false transcription triggers by 40% via adaptive thresholding and signal preprocessing.</li>
-                    <li>Deployed FastAPI async speaker diarization module handling 50+ concurrent audio streams with non-blocking I/O.</li>
-                    <li>Implemented prompt caching strategies reducing LLM inference costs by $0.02/minute through context reuse.</li>
-                </ul>
-            </div>
-            <div class="exp-card reveal">
-                <div class="exp-top">
-                    <div>
-                        <div class="exp-company">Utopia Optovision Pvt. Ltd.</div>
-                        <div class="exp-role">Machine Learning Intern — Pune, India</div>
+                    <div class="meta-item">
+                        <span class="label">Deployment</span>
+                        <span class="value">Edge → Cloud</span>
                     </div>
-                    <span class="exp-date">JAN 2024 — JAN 2025</span>
+                    <div class="meta-item">
+                        <span class="label">Status</span>
+                        <span class="value" style="color: var(--earth-green);">● Available</span>
+                    </div>
                 </div>
-                <ul class="exp-bullets">
-                    <li>Developed real-time industrial inspection system using YOLOv8 + PaddleOCR for conveyor belt code extraction — 15% accuracy improvement, CER reduced 18% → 7%.</li>
-                    <li>Benchmarked Custom CNNs, R-CNN, and VLMs (QWEN), selecting YOLO+OCR hybrid to meet strict latency requirements of manufacturing lines.</li>
-                    <li>Optimized inference pipelines for resource-constrained CCTV hardware via ONNX export and async processing on edge devices.</li>
-                </ul>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="projects">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">03</span>
-            <h2>OPERATIONS</h2>
-            <div class="line"></div>
-        </div>
-        <div class="project-grid">
-            <div class="project-card reveal">
-                <div class="project-status status-progress"><div class="dot"></div> IN PROGRESS</div>
-                <h3>Sentinel Mind</h3>
-                <p>Autonomous satellite intelligence system. Fine-tuned LiquidAI LFM2.5-VL-450M on VRSBench (29K satellite images, 123K VQA pairs) using LoRA via TRL+PEFT. Built multi-spectral analysis pipeline computing NDVI, NBR, NDWI, NDRE with temporal change detection for deforestation monitoring.</p>
-                <div class="project-metrics">
-                    <span class="metric"><i class="fas fa-satellite-dish"></i> 29,614 Images</span>
-                    <span class="metric"><i class="fas fa-brain"></i> 450M Params</span>
-                    <span class="metric"><i class="fas fa-compress-alt"></i> ~50KB Payloads</span>
-                </div>
-                <div class="project-tags">
-                    <span class="tag">VLM</span>
-                    <span class="tag">LoRA</span>
-                    <span class="tag">Sentinel-2</span>
-                    <span class="tag">NDVI</span>
-                    <span class="tag">PEFT</span>
-                </div>
-                <a href="https://github.com/aaryankurade" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">02</span>
+                <h2>MISSION LOG</h2>
+                <div class="line"></div>
             </div>
-            <div class="project-card reveal">
-                <div class="project-status status-active"><div class="dot"></div> PRODUCTION</div>
-                <h3>SAR Ship Detection</h3>
-                <p>Trained YOLOv8s-OBB on ROBOX-SSDD (1,160 images, 2,587 ships) achieving 98% mAP@50. Evaluated cross-domain generalization on custom Umbrа X-band GEC chips. Built SAHI inference pipeline with geo-referenced OBB output (lat/lon + heading) using rasterio affine transforms.</p>
-                <div class="project-metrics">
-                    <span class="metric"><i class="fas fa-bullseye"></i> 98% mAP@50</span>
-                    <span class="metric"><i class="fas fa-globe"></i> Geo-Referenced</span>
-                    <span class="metric"><i class="fas fa-bolt"></i> ONNX FP16</span>
+            <div class="exp-timeline">
+                <div class="exp-card reveal">
+                    <div class="exp-top">
+                        <div>
+                            <div class="exp-company">Intutive Research & Development (IRDPL)</div>
+                            <div class="exp-role">Machine Learning Engineer — Pune, India</div>
+                        </div>
+                        <span class="exp-date">APR 2025 — PRESENT</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Engineered a real-time 3D spatial vision pipeline for robotic manipulation using multithreaded Python concurrency, optimizing multi-camera frame ingestion at deterministic low latency.</li>
+                        <li>Deployed production-grade detection & instance segmentation models integrated with STL CAD matching for precise 6-DoF object pose estimation.</li>
+                        <li>Built real-time 3D point cloud generation with URDF/Gantry kinematic transforms mapping camera coordinates to global world frames.</li>
+                        <li>Implemented concurrent data-streaming pipelines transmitting point clouds, 2D/3D bounding boxes, and segmentation masks to Navigation & Control nodes.</li>
+                    </ul>
                 </div>
-                <div class="project-tags">
-                    <span class="tag">YOLO</span>
-                    <span class="tag">SAR</span>
-                    <span class="tag">SAHI</span>
-                    <span class="tag">OBB</span>
-                    <span class="tag">Rasterio</span>
+                <div class="exp-card reveal">
+                    <div class="exp-top">
+                        <div>
+                            <div class="exp-company">Arakoo.ai</div>
+                            <div class="exp-role">Software Engineer Intern — US, Remote</div>
+                        </div>
+                        <span class="exp-date">AUG 2025 — NOV 2025</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Built real-time ASR pipeline with Voice Activity Detection, reducing false transcription triggers by 40% via adaptive thresholding and signal preprocessing.</li>
+                        <li>Deployed FastAPI async speaker diarization module handling 50+ concurrent audio streams with non-blocking I/O.</li>
+                        <li>Implemented prompt caching strategies reducing LLM inference costs by $0.02/minute through context reuse.</li>
+                    </ul>
                 </div>
-                <a href="https://github.com/aaryankurade" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
-            </div>
-            <div class="project-card reveal">
-                <div class="project-status status-progress"><div class="dot"></div> IN PROGRESS</div>
-                <h3>Multi-Sport CV Analytics</h3>
-                <p>Tracking and analytics pipelines across volleyball, football, and basketball. Hybrid CPU/GPU architecture using ByteTrack, RT-DETR, and custom ONNX models achieving real-time inference (30-100 FPS) with zero-shot team classification via SigLIP embeddings.</p>
-                <div class="project-metrics">
-                    <span class="metric"><i class="fas fa-tachometer-alt"></i> 100 FPS Ball Det.</span>
-                    <span class="metric"><i class="fas fa-chart-line"></i> 87.3% MOTA</span>
-                    <span class="metric"><i class="fas fa-images"></i> 1000+ Annotated</span>
+                <div class="exp-card reveal">
+                    <div class="exp-top">
+                        <div>
+                            <div class="exp-company">Utopia Optovision Pvt. Ltd.</div>
+                            <div class="exp-role">Machine Learning Intern — Pune, India</div>
+                        </div>
+                        <span class="exp-date">JAN 2024 — JAN 2025</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Developed real-time industrial inspection system using YOLOv8 + PaddleOCR for conveyor belt code extraction — 15% accuracy improvement, CER reduced 18% → 7%.</li>
+                        <li>Benchmarked Custom CNNs, R-CNN, and VLMs (QWEN), selecting YOLO+OCR hybrid to meet strict latency requirements of manufacturing lines.</li>
+                        <li>Optimized inference pipelines for resource-constrained CCTV hardware via ONNX export and async processing on edge devices.</li>
+                    </ul>
                 </div>
-                <div class="project-tags">
-                    <span class="tag">ByteTrack</span>
-                    <span class="tag">RT-DETR</span>
-                    <span class="tag">SigLIP</span>
-                    <span class="tag">ONNX</span>
-                    <span class="tag">Roboflow</span>
-                </div>
-                <a href="https://github.com/aaryankurade" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="skills">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">04</span>
-            <h2>TECH ARSENAL</h2>
-            <div class="line"></div>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">03</span>
+                <h2>OPERATIONS</h2>
+                <div class="line"></div>
+            </div>
+            <div class="project-grid">
+                <div class="project-card reveal">
+                    <div class="project-status status-progress"><div class="dot"></div> IN PROGRESS</div>
+                    <h3>Sentinel Mind</h3>
+                    <p>Autonomous satellite intelligence system. Fine-tuned LiquidAI LFM2.5-VL-450M on VRSBench (29K satellite images, 123K VQA pairs) using LoRA via TRL+PEFT. Built multi-spectral analysis pipeline computing NDVI, NBR, NDWI, NDRE with temporal change detection for deforestation monitoring.</p>
+                    <div class="project-metrics">
+                        <span class="metric"><i class="fas fa-satellite-dish"></i> 29,614 Images</span>
+                        <span class="metric"><i class="fas fa-brain"></i> 450M Params</span>
+                        <span class="metric"><i class="fas fa-compress-alt"></i> ~50KB Payloads</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">VLM</span>
+                        <span class="tag">LoRA</span>
+                        <span class="tag">Sentinel-2</span>
+                        <span class="tag">NDVI</span>
+                        <span class="tag">PEFT</span>
+                    </div>
+                    <a href="https://github.com/aaryankurade" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-status status-active"><div class="dot"></div> PRODUCTION</div>
+                    <h3>SAR Ship Detection</h3>
+                    <p>Trained YOLOv8s-OBB on ROBOX-SSDD (1,160 images, 2,587 ships) achieving 98% mAP@50. Evaluated cross-domain generalization on custom Umbra X-band GEC chips. Built SAHI inference pipeline with geo-referenced OBB output (lat/lon + heading) using rasterio affine transforms.</p>
+                    <div class="project-metrics">
+                        <span class="metric"><i class="fas fa-bullseye"></i> 98% mAP@50</span>
+                        <span class="metric"><i class="fas fa-globe"></i> Geo-Referenced</span>
+                        <span class="metric"><i class="fas fa-bolt"></i> ONNX FP16</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">YOLO</span>
+                        <span class="tag">SAR</span>
+                        <span class="tag">SAHI</span>
+                        <span class="tag">OBB</span>
+                        <span class="tag">Rasterio</span>
+                    </div>
+                    <a href="https://github.com/aaryankurade" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-status status-progress"><div class="dot"></div> IN PROGRESS</div>
+                    <h3>Multi-Sport CV Analytics</h3>
+                    <p>Tracking and analytics pipelines across volleyball, football, and basketball. Hybrid CPU/GPU architecture using ByteTrack, RT-DETR, and custom ONNX models achieving real-time inference (30-100 FPS) with zero-shot team classification via SigLIP embeddings.</p>
+                    <div class="project-metrics">
+                        <span class="metric"><i class="fas fa-tachometer-alt"></i> 100 FPS Ball Det.</span>
+                        <span class="metric"><i class="fas fa-chart-line"></i> 87.3% MOTA</span>
+                        <span class="metric"><i class="fas fa-images"></i> 1000+ Annotated</span>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">ByteTrack</span>
+                        <span class="tag">RT-DETR</span>
+                        <span class="tag">SigLIP</span>
+                        <span class="tag">ONNX</span>
+                        <span class="tag">Roboflow</span>
+                    </div>
+                    <a href="https://github.com/aaryankurade" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+                </div>
+            </div>
         </div>
-        <div class="skills-grid">
-            <div class="skill-card reveal">
-                <h4><i class="fas fa-code"></i> Languages</h4>
-                <ul>
-                    <li>Python</li>
-                    <li>PyTorch, TensorFlow</li>
-                    <li>NumPy, Pandas, Scikit-learn</li>
-                </ul>
-            </div>
-            <div class="skill-card reveal">
-                <h4><i class="fas fa-eye"></i> Computer Vision</h4>
-                <ul>
-                    <li>YOLO, RT-DETR, SAM, VLMs</li>
-                    <li>Detection / Segmentation / Pose</li>
-                    <li>ByteTrack, DeepSORT, Kalman</li>
-                    <li>6-DoF Pose, Point Clouds, URDF</li>
-                </ul>
-            </div>
-            <div class="skill-card reveal">
-                <h4><i class="fas fa-globe"></i> Geospatial AI</h4>
-                <ul>
-                    <li>SAR / EO / NIR Imagery</li>
-                    <li>SAHI, OBB, GDAL, Rasterio</li>
-                    <li>QGIS, ArcGIS, Folium</li>
-                    <li>GeoTIFF, Shapefile</li>
-                </ul>
-            </div>
-            <div class="skill-card reveal">
-                <h4><i class="fas fa-robot"></i> AI Agents & LLMs</h4>
-                <ul>
-                    <li>LangChain, LangGraph</li>
-                    <li>Agentic RAG</li>
-                    <li>HuggingFace (TRL, PEFT)</li>
-                    <li>Pinecone, Chroma, Weaviate</li>
-                </ul>
-            </div>
-            <div class="skill-card reveal">
-                <h4><i class="fas fa-bolt"></i> Optimization</h4>
-                <ul>
-                    <li>ONNX, TensorRT, vLLM</li>
-                    <li>INT8/INT4 Quantization</li>
-                    <li>Pruning, LoRA/PEFT</li>
-                    <li>Mixed-precision (AMP)</li>
-                </ul>
-            </div>
-            <div class="skill-card reveal">
-                <h4><i class="fas fa-server"></i> MLOps & Backend</h4>
-                <ul>
-                    <li>Docker, FastAPI</li>
-                    <li>Git, Streamlit</li>
-                    <li>Prometheus Monitoring</li>
-                    <li>Multithreading & Concurrency</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="education">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-num">05</span>
-            <h2>CREDENTIALS</h2>
-            <div class="line"></div>
-        </div>
-        <div class="edu-card reveal">
-            <div class="edu-info">
-                <h3>MIT World Peace University</h3>
-                <div class="degree">B.Tech — Electronics & Communication Engineering (AI/ML)</div>
-                <div class="location"><i class="fas fa-map-marker-alt"></i> Pune, India</div>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">04</span>
+                <h2>TECH ARSENAL</h2>
+                <div class="line"></div>
             </div>
-            <div class="edu-right">
-                <div class="year">JUN 2021 — JUN 2025</div>
-                <div class="gpa">GPA: 7.0 / 10</div>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <h4><i class="fas fa-code"></i> Languages</h4>
+                    <ul>
+                        <li>Python</li>
+                        <li>PyTorch, TensorFlow</li>
+                        <li>NumPy, Pandas, Scikit-learn</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <h4><i class="fas fa-eye"></i> Computer Vision</h4>
+                    <ul>
+                        <li>YOLO, RT-DETR, SAM, VLMs</li>
+                        <li>Detection / Segmentation / Pose</li>
+                        <li>ByteTrack, DeepSORT, Kalman</li>
+                        <li>6-DoF Pose, Point Clouds, URDF</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <h4><i class="fas fa-globe"></i> Geospatial AI</h4>
+                    <ul>
+                        <li>SAR / EO / NIR Imagery</li>
+                        <li>SAHI, OBB, GDAL, Rasterio</li>
+                        <li>QGIS, ArcGIS, Folium</li>
+                        <li>GeoTIFF, Shapefile</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <h4><i class="fas fa-robot"></i> AI Agents & LLMs</h4>
+                    <ul>
+                        <li>LangChain, LangGraph</li>
+                        <li>Agentic RAG</li>
+                        <li>HuggingFace (TRL, PEFT)</li>
+                        <li>Pinecone, Chroma, Weaviate</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <h4><i class="fas fa-bolt"></i> Optimization</h4>
+                    <ul>
+                        <li>ONNX, TensorRT, vLLM</li>
+                        <li>INT8/INT4 Quantization</li>
+                        <li>Pruning, LoRA/PEFT</li>
+                        <li>Mixed-precision (AMP)</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <h4><i class="fas fa-server"></i> MLOps & Backend</h4>
+                    <ul>
+                        <li>Docker, FastAPI</li>
+                        <li>Git, Streamlit</li>
+                        <li>Prometheus Monitoring</li>
+                        <li>Multithreading & Concurrency</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="certs reveal">
-            <div class="cert"><i class="fas fa-certificate"></i> AI Agents Fundamentals — HuggingFace</div>
-            <div class="cert"><i class="fas fa-certificate"></i> Google Cloud Computing — NPTEL</div>
-            <div class="cert"><i class="fas fa-certificate"></i> Computer Vision Bootcamp — OpenCV</div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <div class="container">
-        <div class="footer-links">
-            <a href="https://github.com/aaryankurade" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/aaryankurade" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:aaryankurade27@gmail.com"><i class="fas fa-envelope"></i></a>
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-num">05</span>
+                <h2>CREDENTIALS</h2>
+                <div class="line"></div>
+            </div>
+            <div class="edu-card reveal">
+                <div class="edu-info">
+                    <h3>MIT World Peace University</h3>
+                    <div class="degree">B.Tech — Electronics & Communication Engineering (AI/ML)</div>
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Pune, India</div>
+                </div>
+                <div class="edu-right">
+                    <div class="year">JUN 2021 — JUN 2025</div>
+                    <div class="gpa">GPA: 7.0 / 10</div>
+                </div>
+            </div>
+            <div class="certs reveal">
+                <div class="cert"><i class="fas fa-certificate"></i> AI Agents Fundamentals — HuggingFace</div>
+                <div class="cert"><i class="fas fa-certificate"></i> Google Cloud Computing — NPTEL</div>
+                <div class="cert"><i class="fas fa-certificate"></i> Computer Vision Bootcamp — OpenCV</div>
+            </div>
         </div>
-        <p>DESIGNED & ENGINEERED BY AARYAN KURADE © 2025</p>
-    </div>
-</footer>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/aaryankurade" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/aaryankurade" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:aaryankurade27@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>DESIGNED & ENGINEERED BY AARYAN KURADE © 2025</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
