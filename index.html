@@ -43,7 +43,7 @@
             <h2>About Me</h2>
             <div class="tech-card about-card tilt-card">
                 <p style="font-size: 1.1rem; margin: 0;">
-                    Computer Vision Engineer with production experience across detection, segmentation, tracking, and geospatial applications. Built and deployed CV systems using YOLO, RT-DETR, SAM, and tracking algorithms (ByteTrack, DeepSORT) for sports analytics, satellite imagery, and industrial inspection. Extensive data annotation expertise (Roboflow/CVAT/QGIS) across detection, segmentation, and pose estimation tasks. Specialized in model optimization (ONNX, quantization) and scalable deployment (FastAPI + Docker).
+                    Machine Learning Engineer with production experience across detection, segmentation, 3D perception, and geospatial applications. Architected and deployed real-time CV pipelines utilizing YOLO, RF-DETR, SAM, and advanced tracking frameworks (ByteTrack, DeepSORT). Engineered multi-sensor satellite imagery (SAR/EO/NIR) analytics, Vision-Language Model (VLM) fine-tuning, and SAHI/OBB remote sensing pipelines using GDAL, Rasterio, and QGIS. Expert in 3D coordinate transformations (URDF), point cloud processing, and concurrent robotic navigation platforms. Specialized in model optimization (ONNX, quantization) and scalable deployment (FastAPI + Docker); active OSS contributor.
                 </p>
             </div>
         </div>
@@ -58,15 +58,16 @@
                 <div class="tech-card tilt-card">
                     <div class="experience-header">
                         <div>
-                            <h3 class="company-name">Utopia Optovision Pvt. Ltd.</h3>
-                            <p style="margin:0.25rem 0 0 0; color: var(--text-muted);">Machine Learning Intern | Pune, India</p>
+                            <h3 class="company-name">Intutive Research & Development Pvt Ltd (IRDPL)</h3>
+                            <p style="margin:0.25rem 0 0 0; color: var(--text-muted);">Machine Learning Engineer</p>
                         </div>
-                        <span class="exp-date">Jan 2024 - Jan 2025</span>
+                        <span class="exp-date">Apr 2025 - Present</span>
                     </div>
                     <ul class="tech-list">
-                        <li>Developed real-time industrial inspection system using YOLOv8 + PaddleOCR pipeline for conveyor belt code extraction, achieving 15% accuracy improvement and 61% CER reduction (18% → 7%)</li>
-                        <li>Benchmarked Custom CNNs, R-CNN, and VLMs (QWEN), selecting YOLO+OCR hybrid to meet <100ms latency requirements for manufacturing lines</li>
-                        <li>Optimized inference pipelines for resource-constrained CCTV hardware via ONNX export and async processing</li>
+                        <li>Engineered a real-time 3D spatial vision pipeline for robotic manipulation and navigation using multithreaded Python concurrency, optimizing multi-camera frame ingestion and feature extraction to run deterministically at low latency.</li>
+                        <li>Developed and deployed production-grade object detection and instance segmentation models, integrating predictions with Stereolithography (STL) CAD matching algorithms to calculate precise 6-DoF object poses for target components.</li>
+                        <li>Formulated real-time 3D point cloud generation and downsampling pipelines, incorporating coordinate space transformations by mapping Unified Robot Description Format (URDF) and Gantry kinematic configurations to transform localized camera coordinates into global world frames.</li>
+                        <li>Implemented concurrent data-streaming pipelines to transmit low-latency point clouds, 2D/3D bounding boxes, spatial bounding volumes, and instance segmentation masks directly to downstream Navigation and Control nodes.</li>
                     </ul>
                 </div>
                 <div class="tech-card tilt-card">
@@ -81,6 +82,20 @@
                         <li>Built real-time ASR pipeline with Voice Activity Detection, reducing false transcription triggers by 40% via adaptive thresholding and signal preprocessing</li>
                         <li>Deployed FastAPI async speaker diarization module handling 50+ concurrent audio streams with non-blocking I/O</li>
                         <li>Implemented prompt caching strategies reducing LLM inference costs by $0.02/minute through context reuse</li>
+                    </ul>
+                </div>                
+                <div class="tech-card tilt-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="company-name">Utopia Optovision Pvt. Ltd.</h3>
+                            <p style="margin:0.25rem 0 0 0; color: var(--text-muted);">Machine Learning Intern | Pune, India</p>
+                        </div>
+                        <span class="exp-date">Jan 2024 - Jan 2025</span>
+                    </div>
+                    <ul class="tech-list">
+                        <li>Developed real-time industrial inspection system using YOLOv8 + PaddleOCR pipeline for conveyor belt code extraction, achieving 15% accuracy improvement and 61% CER reduction (18% → 7%)</li>
+                        <li>Benchmarked Custom CNNs, R-CNN, and VLMs (QWEN), selecting YOLO+OCR hybrid to meet <100ms latency requirements for manufacturing lines</li>
+                        <li>Optimized inference pipelines for resource-constrained CCTV hardware via ONNX export and async processing</li>
                     </ul>
                 </div>
             </div>
@@ -205,7 +220,7 @@
                 <div class="skill-category">
                     <h4><i class="fas fa-code"></i> Languages & Frameworks</h4>
                     <ul>
-                        <li>Python, MySQL</li>
+                        <li>Python</li>
                         <li>TensorFlow, PyTorch</li>
                         <li>NumPy, Pandas, Matplotlib, Scikit-learn</li>
                     </ul>
@@ -220,7 +235,7 @@
                         <li>Multi-Object Tracking (ByteTrack, DeepSORT, Kalman Filter)</li>
                         <li>OCR (PaddleOCR, Tesseract, EasyOCR)</li>
                         <li>Homography, Feature Matching</li>
-                        <li>3D Vision</li>
+                        <li>3D Point Clouds, 6-DoF Pose Estimation, URDF Kinematics</li>
                     </ul>
                 </div>
 
